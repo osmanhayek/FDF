@@ -6,13 +6,13 @@
 /*   By: ohayek <ohayek@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 14:41:21 by ohayek            #+#    #+#             */
-/*   Updated: 2023/07/26 02:02:55 by ohayek           ###   ########.fr       */
+/*   Updated: 2023/07/26 14:15:00 by ohayek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
-# include "minilibx/mlx.h"
+# include "minilibx-linux/mlx.h"
 # include "get_next_line/get_next_line.h"
 # include "libft/libft.h"
 # include <fcntl.h>

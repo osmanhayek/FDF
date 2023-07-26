@@ -6,7 +6,7 @@
 /*   By: ohayek <ohayek@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 01:48:57 by ohayek            #+#    #+#             */
-/*   Updated: 2023/07/26 02:41:57 by ohayek           ###   ########.fr       */
+/*   Updated: 2023/07/26 15:19:02 by ohayek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_shift_zoom(t_data *data, t_zoom zoom)
 			* zoom.scale_x) / 2;
 			data->points[y][x].iso_y += (800 - (zoom.max_y - zoom.min_y) \
 			* zoom.scale_y) / 2;
-			if (data->points[y][x].z < 10.0)
+			if (data->points[y][x].z < 10.0 || data->height > 250 || data->width > 250)
 				ratio = 1;
 			else
 				ratio = 10.0 / 100.0;
