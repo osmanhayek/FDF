@@ -6,7 +6,7 @@
 /*   By: ohayek <ohayek@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:00:15 by ohayek            #+#    #+#             */
-/*   Updated: 2023/07/26 03:01:08 by ohayek           ###   ########.fr       */
+/*   Updated: 2023/07/27 04:12:45 by ohayek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,10 @@ void	ft_bresenham(t_point start, t_point end, t_data *data)
 	y = (int)start.iso_y;
 	while (x != (int)end.iso_x || y != (int)end.iso_y)
 	{
-		mlx_pixel_put(data->mlx_ptr, data->mlx_window, x, y, start.color);
+		if (x > 950 || y > 750 || y < 0 || x < 0)
+			mlx_pixel_put(data->mlx_ptr, data->mlx_window, x, y, start.color);
+		else
+			my_mlx_put_pixel_image(data, x, y, start.color);
 		e2 = 2 * algo.err;
 		if (e2 > -algo.dy)
 		{
