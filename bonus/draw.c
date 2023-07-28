@@ -6,11 +6,11 @@
 /*   By: ohayek <ohayek@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:00:15 by ohayek            #+#    #+#             */
-/*   Updated: 2023/07/27 22:31:12 by ohayek           ###   ########.fr       */
+/*   Updated: 2023/07/27 22:31:39 by ohayek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "fdf_bonus.h"
 
 void	ft_set_s(t_point *start, t_point *end, t_bresenham *algo)
 {
@@ -95,7 +95,7 @@ void	ft_bresenham(t_point start, t_point end, t_data *data)
 	y = (int)start.iso_y;
 	while (x != (int)end.iso_x || y != (int)end.iso_y)
 	{
-		my_mlx_put_pixel_image(data, x, y, start.color);
+		ft_put_check_image(data, x, y, start);
 		e2 = 2 * algo.err;
 		if (e2 > -algo.dy)
 		{

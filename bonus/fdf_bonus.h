@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   fdf_bonus.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohayek <ohayek@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 14:41:21 by ohayek            #+#    #+#             */
-/*   Updated: 2023/07/27 22:13:30 by ohayek           ###   ########.fr       */
+/*   Updated: 2023/07/27 22:30:08 by ohayek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
-# include "miniliblx/minilibx_macos/mlx.h"
+#ifndef FDF_BONUS_H
+# define FDF_BONUS_H
+# include "../miniliblx/minilibx_macos/mlx.h"
 # include "get_next_line.h"
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <fcntl.h>
 # include <math.h>
 
@@ -77,5 +77,13 @@ void	ft_shift_zoom(t_data *data, t_zoom zoom);
 void	ft_set_min_max(t_data *data, int y, int x, t_zoom *zoom);
 void	ft_draw_lines(t_data *data);
 void	my_mlx_put_pixel_image(t_data *data, int x, int y, int color);
+void	ft_zoom_in(t_data *data);
 void	ft_fill_image_black(t_data *data);
+void	ft_zoom_out(t_data *data);
+void	ft_translate_w(t_data *data);
+void	ft_translate_a(t_data *data);
+void	ft_translate_s(t_data *data);
+void	ft_translate_d(t_data *data);
+void	rotate_object(t_data *data);
+void	ft_put_check_image(t_data *data, int x, int y, t_point start);
 #endif

@@ -6,7 +6,7 @@
 #    By: ohayek <ohayek@student.42istanbul.com.t    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/01 16:09:17 by ohayek            #+#    #+#              #
-#    Updated: 2023/07/03 15:27:52 by ohayek           ###   ########.fr        #
+#    Updated: 2023/07/27 21:43:13 by ohayek           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,16 +68,16 @@ OBJS_BONUS = $(BSRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar $(ARFLAGS) $(NAME) $(OBJS)
+	@ar $(ARFLAGS) $(NAME) $(OBJS)
 
 %.o: %.c $(INC)
-	$(CC) -c $< -o $@ $(CFLAGS)
+	@$(CC) -c $< -o $@ $(CFLAGS)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	@$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 bonus: $(OBJS) $(OBJS_BONUS)
 	ar $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)

@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohayek <ohayek@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 14:46:42 by ohayek            #+#    #+#             */
-/*   Updated: 2023/07/27 22:11:20 by ohayek           ###   ########.fr       */
+/*   Updated: 2023/07/27 23:18:22 by ohayek           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
-#include <stdio.h>
+#include "fdf_bonus.h"
 
 int	close_window(void *param)
 {
@@ -45,6 +44,27 @@ int	key_press(int keycode, t_data *data)
 {
 	if (keycode == 53)
 		close_window(data);
+	else if (keycode == 49)
+		ft_zoom_in(data);
+	else if (keycode == 32)
+	{
+		rotate_object(data);
+		mlx_clear_window(data->mlx_ptr, data->mlx_window);
+		ft_fill_image_black(data);
+		ft_draw_lines(data);
+		mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, \
+		data->image, 0, 0);
+	}
+	else if (keycode == 12)
+		ft_zoom_out(data);
+	else if (keycode == 13)
+		ft_translate_w(data);
+	else if (keycode == 0)
+		ft_translate_a(data);
+	else if (keycode == 1)
+		ft_translate_s(data);
+	else if (keycode == 2)
+		ft_translate_d(data);
 	return (0);
 }
 
